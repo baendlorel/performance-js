@@ -1,7 +1,12 @@
-import { readFileSync, writeFileSync } from 'node:fs';
+import { existsSync, mkdirSync, readFileSync, writeFileSync } from 'node:fs';
 import path from 'node:path';
 
-const p = path.join(import.meta.dirname, '..', 'output', 'result.log');
+const outputDir = path.join(import.meta.dirname, '..', 'output');
+const p = path.join(outputDir, 'result.log');
+if (!existsSync(outputDir)) {
+  mkdirSync(outputDir, { recursive: true });
+}
+
 const read = () => {
   try {
     const content = readFileSync(p, 'utf-8');
