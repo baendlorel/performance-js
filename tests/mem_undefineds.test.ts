@@ -16,5 +16,5 @@
   const memoryUsed = afterMemory - beforeMemory;
 
   console.log(`iterations ${ITER_COUNT} `);
-  console.log(`内存使用变化: ${memoryUsed / 1024 / 1024} MB`);
+  console.log(`内存使用变化: ${memoryUsed / MB} MB`);
 })();

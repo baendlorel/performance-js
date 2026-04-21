@@ -1,4 +1,3 @@
-import { iterations } from './env.js';
 (function () {
   const arrays = [];
 
@@ -6,7 +5,7 @@ import { iterations } from './env.js';
   const beforeMemory = process.memoryUsage().heapUsed;
 
   // 创建10万个空数组
-  for (let i = 0; i < iterations; i++) {
+  for (let i = 0; i < ITER_COUNT; i++) {
     arrays.push([]);
   }
 
@@ -16,6 +15,6 @@ import { iterations } from './env.js';
   // 计算内存差异
   const memoryUsed = afterMemory - beforeMemory;
 
-  console.log(`iterations ${iterations} `);
-  console.log(`内存使用变化: ${memoryUsed / 1024 / 1024} MB`);
+  console.log(`iterations ${ITER_COUNT} `);
+  console.log(`内存使用变化: ${memoryUsed / MB} MB`);
 })();
