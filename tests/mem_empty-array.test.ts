@@ -13,5 +13,5 @@ kt(import.meta.filename, () => {
 
   const memoryUsed = afterMemory - beforeMemory;
 
-  return `${ITER_COUNT}个数组放在长度为${ITER_COUNT}的大数组中: ${memoryUsed / MB} MB`;
+  return `${ITER_COUNT}个空数组放在一个大数组中: ${memoryUsed / MB} MB`;
 });
