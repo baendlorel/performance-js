@@ -1,4 +1,4 @@
-describe(() => {
+kt(import.meta.filename, () => {
   const arrays = [];
 
   // 记录内存使用情况
@@ -11,5 +11,5 @@ describe(() => {
   // 计算内存差异
   const memoryUsed = afterMemory - beforeMemory;
 
-  log(import.meta.filename, `空槽数组长度：${ITER_COUNT}: ${memoryUsed / MB} MB`);
+  return `空槽数组长度：${ITER_COUNT}: ${memoryUsed / MB} MB`;
 });

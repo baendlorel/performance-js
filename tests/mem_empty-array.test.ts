@@ -1,4 +1,4 @@
-describe(() => {
+kt(import.meta.filename, () => {
   const arrays = [];
   arrays.length = ITER_COUNT;
 
@@ -13,5 +13,5 @@ describe(() => {
 
   const memoryUsed = afterMemory - beforeMemory;
 
-  log(import.meta.filename, `${ITER_COUNT}个数组放在长度为${ITER_COUNT}的大数组中: ${memoryUsed / MB} MB`);
+  return `${ITER_COUNT}个数组放在长度为${ITER_COUNT}的大数组中: ${memoryUsed / MB} MB`;
 });

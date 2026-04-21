@@ -3,8 +3,8 @@ import path from 'node:path';
 
 const p = path.join(import.meta.dirname, '..', 'output', 'result.log');
 const read = () => {
-  const content = readFileSync(p, 'utf-8');
   try {
+    const content = readFileSync(p, 'utf-8');
     return JSON.parse(content);
   } catch {
     return {} as any;
@@ -25,15 +25,12 @@ const deepSet = (obj: any, path: string[], value: any) => {
   current[path[path.length - 1]] = value;
 };
 
-const log = (name: string, ...args: any[]) => {
-  name = name.replace(/test.ts$/g, '');
-  const names = name.split('_');
-
+export const log = (category: string, tag: string, args: any[]) => {
+  args = Array.isArray(args) ? args : [args];
   args = args.map((a) => (isObject(a) ? a[Symbol.for('nodejs.util.inspect.custom')]() : a));
-  console.log(names.join(':'), ...args);
+  console.log(`${category}:${tag}`, ...args);
 
   const result = read();
-  deepSet(result, names, args);
+  deepSet(result, [category, tag], args);
   writeFileSync(p, JSON.stringify(result, null, 2));
 };
-Reflect.set(globalThis, 'log', log);

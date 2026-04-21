@@ -2,6 +2,6 @@ import { defineConfig } from 'vitest/config';
 
 export default defineConfig({
   test: {
-    setupFiles: ['./lib/setup.ts', './lib/log.ts'],
+    setupFiles: ['./lib/setup.ts', './lib/log.ts', './lib/runner.ts'],
   },
 });
