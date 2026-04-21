@@ -10,16 +10,30 @@ const read = () => {
     return {} as any;
   }
 };
+
+const isObject = (a: unknown): a is any => (typeof a === 'object' && a !== null) || typeof a === 'function';
+
+const deepSet = (obj: any, path: string[], value: any) => {
+  let current = obj;
+  for (let i = 0; i < path.length - 1; i++) {
+    const key = path[i];
+    if (!(key in current)) {
+      current[key] = {};
+    }
+    current = current[key];
+  }
+  current[path[path.length - 1]] = value;
+};
+
 const log = (name: string, ...args: any[]) => {
-  args = args.map((a) =>
-    (typeof a === 'object' && a !== null) || typeof a === 'function'
-      ? a[Symbol.for('nodejs.util.inspect.custom')]()
-      : a,
-  );
-  console.log(name, ...args);
+  name = name.replace(/test.ts$/g, '');
+  const names = name.split('_');
+
+  args = args.map((a) => (isObject(a) ? a[Symbol.for('nodejs.util.inspect.custom')]() : a));
+  console.log(names.join(':'), ...args);
 
   const result = read();
-  result[name] = args;
+  deepSet(result, names, args);
   writeFileSync(p, JSON.stringify(result, null, 2));
 };
 Reflect.set(globalThis, 'log', log);

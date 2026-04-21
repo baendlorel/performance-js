@@ -1,4 +1,4 @@
-(function () {
+describe(() => {
   const arrays = [];
 
   // 记录内存使用情况
@@ -15,6 +15,5 @@
   // 计算内存差异
   const memoryUsed = afterMemory - beforeMemory;
 
-  console.log(`iterations ${ITER_COUNT} `);
-  console.log(`内存使用变化: ${memoryUsed / MB} MB`);
-})();
+  log(import.meta.filename, `全放undefined数组长度：${ITER_COUNT}: ${memoryUsed / MB} MB`);
+});

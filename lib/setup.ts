@@ -1,2 +1,5 @@
+import { describe } from 'vitest';
+Reflect.set(globalThis, 'describe', describe);
+
 Reflect.set(globalThis, 'ITER_COUNT', 1e6);
 Reflect.set(globalThis, 'MB', 1024 * 1024);
