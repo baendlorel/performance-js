@@ -1,16 +1,10 @@
-import { basename } from 'node:path';
+import path from 'node:path';
 import { describe, it } from 'vitest';
 import { log } from './log.js';
-const presetCategory: Record<string, string> = {
-  mem: 'memory',
-};
 
 const kt = (filename: string, fn: () => any) => {
-  let [category, tag] = basename(filename)
-    .replace(/.test.ts$/g, '')
-    .split('_');
-
-  category = presetCategory[category] ?? category;
+  const category = path.basename(path.dirname(filename));
+  let tag = path.basename(filename).replace(/.test.ts$/g, '');
 
   let args: any = null;
 
