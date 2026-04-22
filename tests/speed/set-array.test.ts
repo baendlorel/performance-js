@@ -2,19 +2,25 @@ kt(import.meta.filename, () => {
   const set = new Set();
   const array = [];
 
-  for (let i = 0; i < ITER_COUNT; i++) {
-    array.push(i); // 预先准备好一些数据，防止后面没处删
+  for (let i = 0; i < 12; i++) {
+    // 预先准备好一些数据，防止后面没处删
+    array.push(i);
+    set.add(-i);
   }
 
+  let i = 0;
+  setInterval(() => {
+    console.log(i / (ITER_COUNT / 100));
+  }, 1000);
   const s0 = performance.now();
-  for (let i = 0; i < ITER_COUNT; i++) {
+  for (i = 0; i < ITER_COUNT / 100; i++) {
     set.add(i); // 测试 add
     set.has(i); // 测试 has
     set.delete(i); // 测试 delete
   }
   const s1 = performance.now();
 
-  for (let i = 0; i < ITER_COUNT; i++) {
+  for (i = 0; i < ITER_COUNT / 100; i++) {
     array.push(i); // 测试 push
     array.includes(i); // 测试 includes
     array.splice(i, 1); // 测试 splice
