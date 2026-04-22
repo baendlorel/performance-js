@@ -33,7 +33,8 @@ const deepSet = (obj: any, path: string[], value: any) => {
 export const log = (category: string, tag: string, args: any[]) => {
   args = Array.isArray(args) ? args : [args];
   args = args.map((a) => (isObject(a) ? a[Symbol.for('nodejs.util.inspect.custom')]() : a));
-  console.log(`${category}:${tag}`, ...args);
+  console.log(`${category}:${tag}`);
+  args.forEach((a) => console.log('  ', a));
 
   const result = read();
   deepSet(result, [category, tag], args);
