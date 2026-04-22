@@ -5,9 +5,7 @@ import { log } from './log.js';
 const kt = (filename: string, fn: () => any) => {
   const category = path.basename(path.dirname(filename));
   let tag = path.basename(filename).replace(/.test.ts$/g, '');
-
   let args: any = null;
-
   describe(category, () =>
     it(tag, () => {
       args = fn();
