@@ -3,7 +3,7 @@ kt(import.meta.filename, () => {
 
   const beforeMemory = process.memoryUsage().heapUsed;
 
-  for (let i = 0; i < ITER_COUNT / 10; i++) {
+  for (let i = 0; i < LEN / 10; i++) {
     const a = new Set();
     a.add('sdffd');
     a.add('sdsdffcd');
@@ -18,5 +18,5 @@ kt(import.meta.filename, () => {
 
   const memoryUsed = afterMemory - beforeMemory;
 
-  return `6个值的Set：${ITER_COUNT / 10}: ${memoryUsed / MB} MB`;
+  return `6个值的Set：${LEN / 10}: ${memoryUsed / MB} MB`;
 });

@@ -1,11 +1,11 @@
 kt(import.meta.filename, () => {
-  ITER_RATIO = 12;
-  const a = Array.from({ length: ITER_COUNT }, () => (Math.random() > 0.85 ? { sdf: 23 } : null));
+  LEN_RATIO = 12;
+  const a = Array.from({ length: LEN }, () => (Math.random() > 0.85 ? { sdf: 23 } : null));
   let b = 0;
 
   // 第一种写法
   const s0 = performance.now();
-  for (let i = 0; i < ITER_COUNT; i++) {
+  for (let i = 0; i < LEN; i++) {
     if (a[i]) {
       b++;
     }
@@ -13,7 +13,7 @@ kt(import.meta.filename, () => {
   const s1 = performance.now();
 
   // 第二种写法
-  for (let i = 0; i < ITER_COUNT; i++) {
+  for (let i = 0; i < LEN; i++) {
     if (a[i] !== null) {
       b++;
     }

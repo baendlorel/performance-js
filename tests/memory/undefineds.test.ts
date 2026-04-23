@@ -5,7 +5,7 @@ kt(import.meta.filename, () => {
   const beforeMemory = process.memoryUsage().heapUsed;
 
   // 创建10万个空数组
-  for (let i = 0; i < ITER_COUNT; i++) {
+  for (let i = 0; i < LEN; i++) {
     arrays.push(undefined);
   }
 
@@ -15,5 +15,5 @@ kt(import.meta.filename, () => {
   // 计算内存差异
   const memoryUsed = afterMemory - beforeMemory;
 
-  return `全放undefined数组长度：${ITER_COUNT}: ${memoryUsed / MB} MB`;
+  return `全放undefined数组长度：${LEN}: ${memoryUsed / MB} MB`;
 });

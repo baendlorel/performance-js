@@ -3,7 +3,7 @@ kt(import.meta.filename, () => {
 
   const beforeMemory = process.memoryUsage().heapUsed;
 
-  for (let i = 0; i < ITER_COUNT / 10; i++) {
+  for (let i = 0; i < LEN / 10; i++) {
     const a = new Map();
     a.set('sdf', 'fd');
     a.set('sdsdf', 'fcd');
@@ -18,5 +18,5 @@ kt(import.meta.filename, () => {
 
   const memoryUsed = afterMemory - beforeMemory;
 
-  return `6对键值对的Map：${ITER_COUNT / 10}: ${memoryUsed / MB} MB`;
+  return `6对键值对的Map：${LEN / 10}: ${memoryUsed / MB} MB`;
 });

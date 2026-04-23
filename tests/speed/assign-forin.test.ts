@@ -2,7 +2,7 @@ kt(import.meta.filename, () => {
   let a: any = { a: 1, b: 2, c: 3 }; // 初始对象
   let b: any = { d: 4, e: 5, f: 6 }; // 被拷贝的对象
 
-  const innerITER_COUNT = ITER_COUNT * 10;
+  const innerITER_COUNT = LEN * 10;
 
   // 第一种写法：Object.assign
   const s0 = performance.now();

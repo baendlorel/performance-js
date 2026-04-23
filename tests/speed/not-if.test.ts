@@ -1,5 +1,5 @@
 kt(import.meta.filename, () => {
-  const innerITER_COUNT = ITER_COUNT * 10;
+  const innerITER_COUNT = LEN * 10;
   let a = Array.from({ length: innerITER_COUNT }, () => Math.random() > 0.85);
   let falseCount = 0;
   let trueCount = 0;

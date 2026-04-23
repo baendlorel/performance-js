@@ -1,17 +1,17 @@
 /**
  * `1e6` by default
  */
-declare const ITER_COUNT_BASE: number;
+declare const LEN_BASE: number;
 
 /**
- * @returns `ITER_COUNT_BASE * ITER_RATIO`
+ * @returns `LEN_BASE * LEN_RATIO`
  */
-declare const ITER_COUNT: number;
+declare const LEN: number;
 
 /**
- * The final `ITER_COUNT` will multiply by this value
+ * The final `LEN` will multiply by this value
  */
-declare let ITER_RATIO: number;
+declare let LEN_RATIO: number;
 
 declare const MB: number;
 

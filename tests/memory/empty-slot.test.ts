@@ -3,7 +3,7 @@ kt(import.meta.filename, () => {
 
   // 记录内存使用情况
   const beforeMemory = process.memoryUsage().heapUsed;
-  arrays.length = ITER_COUNT;
+  arrays.length = LEN;
 
   // 记录内存使用情况
   const afterMemory = process.memoryUsage().heapUsed;
@@ -11,5 +11,5 @@ kt(import.meta.filename, () => {
   // 计算内存差异
   const memoryUsed = afterMemory - beforeMemory;
 
-  return `空槽数组长度：${ITER_COUNT}: ${memoryUsed / MB} MB`;
+  return `空槽数组长度：${LEN}: ${memoryUsed / MB} MB`;
 });
