@@ -1,12 +1,12 @@
 kt(import.meta.filename, () => {
-  const arrays = [];
-  arrays.length = LEN;
+  const nestedArrays = [];
+  nestedArrays.length = LEN;
 
   // 记录内存使用情况
   const beforeMemory = process.memoryUsage().heapUsed;
 
   for (let i = 0; i < LEN; i++) {
-    arrays[i] = [];
+    nestedArrays[i] = [];
   }
 
   const afterMemory = process.memoryUsage().heapUsed;

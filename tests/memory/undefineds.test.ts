@@ -1,12 +1,12 @@
 kt(import.meta.filename, () => {
-  const arrays = [];
+  const undefinedValues = [];
 
   // 记录内存使用情况
   const beforeMemory = process.memoryUsage().heapUsed;
 
   // 创建10万个空数组
   for (let i = 0; i < LEN; i++) {
-    arrays.push(undefined);
+    undefinedValues.push(undefined);
   }
 
   // 记录内存使用情况

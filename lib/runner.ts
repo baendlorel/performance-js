@@ -6,7 +6,8 @@ const kt = (filename: string, fn: () => any) => {
   const category = path.basename(path.dirname(filename));
   let tag = path.basename(filename).replace(/.test.ts$/g, '');
   let args: any = null;
-  describe(category, () =>
+  describe(category, () => {
+    LEN_RATIO = 1; // initialize to 1 for each test file
     it(tag, () => {
       args = fn();
       if (typeof args?.then === 'function') {
@@ -15,7 +16,7 @@ const kt = (filename: string, fn: () => any) => {
         log(category, tag, args);
       }
       return args;
-    }),
-  );
+    });
+  });
 };
 Reflect.set(globalThis, 'kt', kt);

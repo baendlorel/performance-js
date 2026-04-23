@@ -1,22 +1,22 @@
 kt(import.meta.filename, () => {
-  const arrays = [];
-
+  LEN_RATIO = 0.1;
+  const sets = [];
   const beforeMemory = process.memoryUsage().heapUsed;
 
-  for (let i = 0; i < LEN / 10; i++) {
-    const a = new Set();
-    a.add('sdffd');
-    a.add('sdsdffcd');
-    a.add('sdfaaaf3d');
-    a.add('sdfdfd2');
-    a.add('2fd发2');
-    a.add('士大夫fd发2');
-    arrays.push(a);
+  for (let i = 0; i < LEN; i++) {
+    const valueSet = new Set();
+    valueSet.add('sdffd');
+    valueSet.add('sdsdffcd');
+    valueSet.add('sdfaaaf3d');
+    valueSet.add('sdfdfd2');
+    valueSet.add('2fd发2');
+    valueSet.add('士大夫fd发2');
+    sets.push(valueSet);
   }
 
   const afterMemory = process.memoryUsage().heapUsed;
 
   const memoryUsed = afterMemory - beforeMemory;
 
-  return `6个值的Set：${LEN / 10}: ${memoryUsed / MB} MB`;
+  return `6个值的Set：${LEN}: ${memoryUsed / MB} MB`;
 });

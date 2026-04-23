@@ -1,9 +1,9 @@
 kt(import.meta.filename, () => {
-  const arrays = [];
+  const sparseArray = [];
 
   // 记录内存使用情况
   const beforeMemory = process.memoryUsage().heapUsed;
-  arrays.length = LEN;
+  sparseArray.length = LEN;
 
   // 记录内存使用情况
   const afterMemory = process.memoryUsage().heapUsed;
