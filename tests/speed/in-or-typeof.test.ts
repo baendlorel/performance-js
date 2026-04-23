@@ -1,18 +1,18 @@
 kt(import.meta.filename, () => {
-  const iterations = ITER_COUNT * 50; // 执行的次数，避免结果受单次运行影响
+  ITER_RATIO = 50;
   let obj = { a: 'value', b: 42, c: 'another value' }; // 测试对象
   let key = 'a'; // 测试的键
 
   const start = performance.now();
   let b = 1;
-  for (let i = 0; i < iterations; i++) {
+  for (let i = 0; i < ITER_COUNT; i++) {
     if (key in obj) {
       b++;
     }
   }
   const s1 = performance.now();
 
-  for (let i = 0; i < iterations; i++) {
+  for (let i = 0; i < ITER_COUNT; i++) {
     if (typeof (obj as any)[key] === 'string') {
       b--;
     }
