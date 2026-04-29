@@ -1,11 +1,7 @@
-import { dirname } from 'node:path';
 import { describe, it } from 'vitest';
 import { log } from './log.js';
 
 const runner = (testCase: string, fn: () => any, category: string) => {
-  category = dirname(category);
-  testCase = dirname(testCase);
-
   let args: any = null;
   describe(category, () => {
     LEN_RATIO = 1; // initialize to 1 for each test file
