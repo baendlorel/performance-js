@@ -1,8 +1,8 @@
+import { dirname } from 'node:path';
 import { describe, it } from 'vitest';
 import { log } from './log.js';
-import { dirname } from 'node:path';
 
-const runner = (category: string, testCase: string, fn: () => any) => {
+const runner = (testCase: string, fn: () => any, category: string) => {
   category = dirname(category);
   testCase = dirname(testCase);
 

@@ -11,9 +11,9 @@ export default defineConfig({
       name: 'category-injection',
       transform(code, id) {
         const category = JSON.stringify(dirname(id));
-        return {
-          code: code.replace('describe(', `describe(${category}, `),
-        };
+        code = code.replace(/}\);\s+$/g, `},${category});`);
+        console.log(code);
+        return { code };
       },
     },
   ],
