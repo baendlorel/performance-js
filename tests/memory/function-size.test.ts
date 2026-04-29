@@ -1,5 +1,5 @@
 it('普通函数和箭头函数的内存占用量', () => {
-  LEN_RATIO = 0.7;
+  LEN_RATIO = 0.8;
   const arr = [];
 
   const m0 = process.memoryUsage().heapUsed;
