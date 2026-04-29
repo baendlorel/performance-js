@@ -1,4 +1,4 @@
-kt(import.meta.filename, () => {
+describe(import.meta.filename, () => {
   const sparseArray = [];
 
   // 记录内存使用情况

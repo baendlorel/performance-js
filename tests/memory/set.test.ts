@@ -1,4 +1,4 @@
-kt(import.meta.filename, () => {
+describe(import.meta.filename, () => {
   LEN_RATIO = 0.1;
   const sets = [];
   const beforeMemory = process.memoryUsage().heapUsed;

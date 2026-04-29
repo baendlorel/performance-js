@@ -1,4 +1,4 @@
-kt(import.meta.filename, () => {
+describe(import.meta.filename, () => {
   LEN_RATIO = 20;
 
   let matchCount = 0;

@@ -1,4 +1,4 @@
-kt(import.meta.filename, () => {
+describe(import.meta.filename, () => {
   const nestedArrays = [];
   nestedArrays.length = LEN;
 
