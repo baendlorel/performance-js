@@ -1,4 +1,4 @@
-describe(import.meta.filename, () => {
+it('空槽数组内存占用', () => {
   const sparseArray = [];
 
   // 记录内存使用情况

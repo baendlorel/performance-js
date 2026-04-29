@@ -1,4 +1,4 @@
-describe(import.meta.filename, () => {
+it('6对键值对的Map内存占用', () => {
   LEN_RATIO = 0.1;
   const maps = [];
 

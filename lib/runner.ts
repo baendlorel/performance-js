@@ -21,3 +21,4 @@ const runner = (category: string, testCase: string, fn: () => any) => {
   });
 };
 Reflect.set(globalThis, 'describe', runner);
+Reflect.set(globalThis, 'it', runner);

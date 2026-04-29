@@ -1,4 +1,4 @@
-describe(import.meta.filename, () => {
+it('?.a > 0 和 typeof ?.a === "number"速度对比', () => {
   LEN_RATIO = 20;
 
   let matchCount = 0;

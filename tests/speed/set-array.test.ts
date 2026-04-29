@@ -1,4 +1,4 @@
-describe(import.meta.filename, () => {
+it('Set 与数组操作性能对比', () => {
   const set = new Set();
   const array = [];
 

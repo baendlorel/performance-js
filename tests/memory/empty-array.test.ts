@@ -1,4 +1,4 @@
-describe(import.meta.filename, () => {
+it('空数组内存占用', () => {
   const nestedArrays = [];
   nestedArrays.length = LEN;
 

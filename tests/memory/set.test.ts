@@ -1,7 +1,7 @@
-describe(import.meta.filename, () => {
+it('6个值的Set内存占用', () => {
   LEN_RATIO = 0.1;
   const sets = [];
-  const beforeMemory = process.memoryUsage().heapUsed;
+  const m0 = process.memoryUsage().heapUsed;
 
   for (let i = 0; i < LEN; i++) {
     const valueSet = new Set();
@@ -14,9 +14,8 @@ describe(import.meta.filename, () => {
     sets.push(valueSet);
   }
 
-  const afterMemory = process.memoryUsage().heapUsed;
-
-  const memoryUsed = afterMemory - beforeMemory;
+  const m1 = process.memoryUsage().heapUsed;
+  const memoryUsed = m1 - m0;
 
   return `6个值的Set：${LEN}: ${memoryUsed / MB} MB`;
 });

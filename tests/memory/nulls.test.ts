@@ -1,4 +1,4 @@
-describe(import.meta.filename, () => {
+it('全放null数组内存占用', () => {
   const nullValues = [];
 
   // 记录内存使用情况

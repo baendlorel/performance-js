@@ -1,4 +1,4 @@
-describe(import.meta.filename, () => {
+it(import.meta.filename, () => {
   LEN_RATIO = 10;
   let a = Array.from({ length: LEN }, () => Math.random() > 0.85);
   let falseCount = 0;

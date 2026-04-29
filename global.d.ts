@@ -15,4 +15,4 @@ declare let LEN_RATIO: number;
 
 declare const MB: number;
 
-declare const describe: (testCase: string, fn: () => any) => void;
+declare const it: (testCase: string, fn: () => any) => void;

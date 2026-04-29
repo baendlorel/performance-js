@@ -1,4 +1,4 @@
-describe(import.meta.filename, () => {
+it(import.meta.filename, () => {
   LEN_RATIO = 12;
   const a = Array.from({ length: LEN }, () => (Math.random() > 0.85 ? { sdf: 23 } : null));
   let b = 0;

@@ -1,4 +1,4 @@
-describe(import.meta.filename, () => {
+it('全放undefined数组内存占用', () => {
   const undefinedValues = [];
 
   // 记录内存使用情况

@@ -1,4 +1,4 @@
-describe(import.meta.filename, () => {
+it('普通函数和箭头函数的内存占用量', () => {
   LEN_RATIO = 0.5;
   const arr = [];
 
