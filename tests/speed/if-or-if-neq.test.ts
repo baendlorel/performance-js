@@ -1,4 +1,4 @@
-it(import.meta.filename, () => {
+it('if (a[i]) 和 if (a[i] !== null) 速度对比', () => {
   LEN_RATIO = 12;
   const a = Array.from({ length: LEN }, () => (Math.random() > 0.85 ? { sdf: 23 } : null));
   let b = 0;

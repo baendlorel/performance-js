@@ -1,4 +1,4 @@
-it(import.meta.filename, () => {
+it('if !a 和 if a 速度对比', () => {
   LEN_RATIO = 10;
   let a = Array.from({ length: LEN }, () => Math.random() > 0.85);
   let falseCount = 0;

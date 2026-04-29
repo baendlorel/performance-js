@@ -1,4 +1,4 @@
-it(import.meta.filename, () => {
+it('key in obj 和 typeof obj[key] === "string" 速度对比', () => {
   LEN_RATIO = 50;
   let obj = { a: 'value', b: 42, c: 'another value' }; // 测试对象
   let key = 'a'; // 测试的键
