@@ -58,7 +58,7 @@ it('Map.forEach 与 for + [...map] 遍历对比', () => {
   return [
     `${LEN_STR} times`,
     `Map.forEach: ${s1 - s0}ms`,
-    `for + [...map] iterate: ${s3 - s1}ms`,
+    `for + [...map] iterate: ${s3 - s2}ms`,
     `forEach-push: ${s5 - s4}ms`,
     `forEach-push + for let i total: ${s6 - s4}ms`,
   ];
